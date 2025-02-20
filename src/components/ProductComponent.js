@@ -12,7 +12,6 @@ export const Price = ({promo, price}) => {
         )
     }
 }
-// git config --global user.name "arseneruben"
  
 class Product extends Component {
         constructor(props){
@@ -25,7 +24,7 @@ class Product extends Component {
                 <div className="col-lg-3 col-md-4  col-12" key={id}>
                     <div className="product-grid mb-4">
                         <div className="product-img">
-                            <Link to="/home">
+                            <Link to={`/home/${id}`}>
                                 <img className="pic-1 img-responsive" src={img} />
                                     {
                                         promo >0 ?
