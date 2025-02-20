@@ -6,6 +6,7 @@ import Contact from "./ContactComponent";
 import Cart from "./CartComponent";
 import {connect} from "react-redux"
 import ProductDetails from "./ProductDetailsComponent";
+import BeforeHeader from "./BeforeHeaderComponent";
 
 const mapStateToProps = state => {
     return (

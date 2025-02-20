@@ -31,7 +31,7 @@ function ProductDetails(props) {
                                     </CardText>
                                     <div className="d-flex justify-content-center">
                                         <Button outline className="btn-perso1">Acheter</Button>
-                                        <Link>
+                                        <Link to="/home">
                                             <Button outline className="ml-5 btn-perso1">Retourner</Button>
                                         </Link>
                                     </div>

@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse, NavItem, Button, Form, FormGroup, Input } from "reactstrap";
+import BeforeHeader from "./BeforeHeaderComponent";
 
 class Header extends Component {
     render(){
         return (
             <>
+                <BeforeHeader/>
+            
                 <Navbar light expand="lg" id="myNavBar" className="align-items-center sticky-top ml-0 mb-nd-0 navb">
                     <div className="d-flex justify-content-between ">
                         <NavbarBrand className="mr-2">
