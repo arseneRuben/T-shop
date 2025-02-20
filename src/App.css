@@ -1,0 +1,107 @@
+#root {
+  font-family: "Oswald", sans-serif;
+  background-color: rgba(214, 2214, 212, 0.2);
+  color: #3b3a32;
+  height: 1000px;
+}
+
+.navb{
+  background-color: #fff;
+}
+.btn-perso-1 {
+  color: #3b3a32 !important;
+  transition: all .5s ease-in-out !important;
+}
+.btn-perso-1 i {
+  color: #3b3a32 !important;
+  transition: all .5s ease-in-out !important;
+}
+.btn-perso-1:hover{
+  color: #ffbb02;
+  background-color: #3b3a32 !important;
+}
+.btn-perso-1:hover i{
+  color: #ffbb02 !important;
+}
+.btn-perso-1:hover  a{
+  color: #ffbb02 !important;
+}
+#myNavBar1{
+  box-shadow: 2px 2px #eee;
+}
+
+#myNavBar1 li{
+  color: #3b3a32 !important;
+  transition: all .3s ease-in-out !important;
+}
+
+#myNavBar1:hover li{
+  opacity: 0.2;
+  filter: blur(0.px);
+}
+
+#myNavBar1 li:hover{
+  opacity: 1;
+  filter: blur(0px);
+}
+
+#myNavBar a{
+  text-decoration: none !important;
+  color: #3b3a32 ;
+  transition: all .3s ease-in-out !important;
+
+}
+
+/***************** Search box ****************/
+
+.myNavBar3 .btn {
+  background-color: #ffbb02 !important;
+  max-width: 40px;
+  border: none !important;
+  border-top-right-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+  margin-bottom: 5px;
+
+}
+
+.myNavBar3 .btn i {
+  transition: all .3s ease-in-out !important;
+  color: #3b3a32 !important;
+}
+
+.myNavBar3 .btn:hover i {
+  font-size: 18px;
+}
+
+.myNavBar3 .form-control {
+  border-top-left-radius: 25px !important;
+  border-bottom-left-radius: 25px !important;
+  background-color: rgba(214, 2214, 212, 0.2) !important;
+  display: inline-block;
+}
+
+.myNavBar3 form-group {
+  margin-bottom: 0px;
+}
+
+@media only screen and(min-width : 900px){
+  .myNavBar3 .form-control{
+    width: 250px;
+  }
+}
+@media only screen and(min-width : 1200px){
+  .myNavBar3 .form-control{
+    width: 300px;
+  }
+}
+
+/*********************** title component *********************/
+.text-title {
+  font-family: cursive;
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+}
+
+.text-yellow{
+  color : #ffbb02;
+}
