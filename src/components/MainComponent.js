@@ -11,7 +11,8 @@ import BeforeHeader from "./BeforeHeaderComponent";
 const mapStateToProps = state => {
     return (
         {
-            products : state.Products
+            products : state.Products,
+            productsInCart : state.Cart
         }
     )
 }
@@ -31,7 +32,7 @@ class Main extends Component {
                     <Route  path="/home/:pId" element={<ProductWithId/>}/> 
                     <Route exact path="/home" element={<Home  products={this.props.products.lesProduits} />}/> 
                     <Route exact path="/contact" element={<Contact/>}/> 
-                    <Route exact path="/cart" element={<Cart/>}/> 
+                    <Route  path="/cart" element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart}/>}/> 
                     
                  </Routes>
             </>

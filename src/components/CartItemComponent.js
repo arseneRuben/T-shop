@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 
 function CartItem(props) {
-        const {id, title, img, price, count, promo} = props.product;
+        var {id, title, img, price, count, promo} = props.product;
         promo === 0 ? price = price : price = ((100-promo)*price)/100;
         return (
             <div className="container-fluid text-center">
@@ -11,7 +11,7 @@ function CartItem(props) {
                         <img className="img-fluig" src={img} width="100" />
                     </div>
                     <div className="col-2 mx-auto">
-                        <p className="text-uppercase">{titel}</p>
+                        <p className="text-uppercase">{title}</p>
                     </div>
                     <div className="col-2 mx-auto">
                         <p className="font-weight-bold">{price}</p>
