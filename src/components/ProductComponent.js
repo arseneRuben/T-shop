@@ -45,7 +45,7 @@ class Product extends Component {
                             </div>
                             <ul className="action-product list-unstyled">
                                 <li className="text-center"> <Link to={`/home/${id}`}> <i className="fa fa-search"></i></Link></li>
-                                <li className="ml-4 text-center"> <Link to="/cart"> <i className="fa fa-shopping-cart"></i></Link></li>
+                                <li className="ml-4 text-center"> <Link to="/cart"> <i className="fa fa-shopping-cart" onClick={() => {inCart ? console.log("incart"): this.props.addToCart(this.props.caracteristique)}}></i></Link></li>
                             </ul>
                         </div>
                     </div>

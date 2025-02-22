@@ -2,7 +2,6 @@
   font-family: "Oswald", sans-serif;
   background-color: rgba(214, 2214, 212, 0.2);
   color: #3b3a32;
-  height: 1000px;
 }
 
 .navb{
@@ -128,4 +127,52 @@
   padding-top: 10px;
   padding-bottom: 10px;
   white-space:  nowrap;
+}
+
+/********************* CartComponent  ******************************/
+.cartItem {
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 15px !important;
+  margin-top: 8px;
+}
+
+.cartItem img {
+  border-radius: 10px;
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttonCart {
+  margin-left: 5px;
+  background-color: #3b3a32 !important;
+  border: none;
+  max-width: 35px;
+  box-shadow: 2px 2px  0 rgba(0,0,0, 0.15);
+
+}
+
+.buttonCart span {
+  transition: all .3s ease-in-out;
+}
+
+
+.buttonCart:hover span {
+  font-size:  20px;
+}
+
+.buttonCart-middle {
+  height: 55px;
+  width: 30px;
+} 
+
+.buttonCart-delete {
+    border-radius: 50% !important;
+    background-color: #fa3c3c !important;
+    transition: all .3s ease-in-out;
+}
+
+.spaceCart {
+  min-height: 400px;
 }
