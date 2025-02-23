@@ -15,7 +15,7 @@ function Cart(props) {
                                                 :
                                                 <>
                                                         <CartHeader/>
-                                                        {props.productsInCart.map ( p => <CartItem product={p} key={p.id}/>)}
+                                                        {props.productsInCart.map ( p => <CartItem product={p} key={p.id}  removeToCart = {props.removeToCart}/>)}
                                                 </>
                                         }
                                 </div>

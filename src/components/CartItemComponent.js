@@ -22,7 +22,7 @@ function CartItem(props) {
                         <Button className="btn btn-primary outiline buttonCart"><span className="fa fa-minus"></span></Button>
                     </div>
                     <div className="col-10 col-lg-2  mx-auto my-3">
-                         <Button className="btn btn-primary outiline buttonCart buttonCart-delete"><span className="fa fa-times m-auto"></span></Button>
+                         <Button className="btn btn-primary outiline buttonCart buttonCart-delete"><span className="fa fa-times m-auto" onClick={()=>props.removeToCart(id)}></span></Button>
                     </div>
                     <div className="col-10 col-lg-2  mx-auto my-auto">
                          <p className="font-weight-bold">{count*price}</p>

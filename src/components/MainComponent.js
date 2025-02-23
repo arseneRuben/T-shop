@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
-import {addToCart} from "../redux/ActionCreator";
+import {addToCart, removeToCart} from "../redux/ActionCreator";
 import {Route, Routes, useParams} from "react-router-dom"
 import Contact from "./ContactComponent";
 import Cart from "./CartComponent";
@@ -18,14 +18,16 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispath => ({
-    addToCart : (product) => dispath(addToCart(product))
-})
+    addToCart : (product) => dispath(addToCart(product)),
+    removeToCart : (id) => dispath(removeToCart(id))
+});
+
 class Main extends Component {
     render(){
         const ProductWithId = () => {
             const { pId } = useParams()
             return (
-                <ProductDetails product={this.props.products.lesProduits.filter(p => p.id === parseInt(pId))[0]}/>
+                <ProductDetails product={this.props.products.lesProduits.filter(p => p.id === parseInt(pId))[0]}  addToCart={this.props.addToCart}/>
             )
         }
         return (
@@ -36,7 +38,7 @@ class Main extends Component {
                     <Route  path="/home/:pId" element={<ProductWithId/>}/> 
                     <Route exact path="/home" element={<Home  products={this.props.products.lesProduits} addToCart={this.props.addToCart}/>}/> 
                     <Route exact path="/contact" element={<Contact/>}/> 
-                    <Route  path="/cart" element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart}/>}/> 
+                    <Route  path="/cart" element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart} removeToCart={this.props.removeToCart}/>}/> 
                     
                  </Routes>
             </>

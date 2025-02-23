@@ -21,7 +21,7 @@ class Product extends Component {
             const {id, title, img, price, inCart, promo} = this.props.caracteristique;
 
             return (
-                <div className="col-lg-3 col-md-4  col-12" key={id}>
+                <div className="col-lg-3 col-md-4  col-12" >
                     <div className="product-grid mb-4">
                         <div className="product-img">
                             <Link to={`/home/${id}`}>

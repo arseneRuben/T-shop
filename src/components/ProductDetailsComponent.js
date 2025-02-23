@@ -27,10 +27,10 @@ function ProductDetails(props) {
                                 </CardHeader>
                                 <CardBody>
                                     <CardText>
-                                        <h4 className="text-yellow text-center">price : {price}$</h4>
+                                        <strong className="text-yellow text-center">price : {price}$</strong> 
                                     </CardText>
                                     <div className="d-flex justify-content-center">
-                                        <Button outline className="btn-perso1">Acheter</Button>
+                                        <Button outline className="btn-perso1" onClick={() => {inCart ? console.log("incart"): props.addToCart(props.product)}}>Acheter</Button>
                                         <Link to="/home">
                                             <Button outline className="ml-5 btn-perso1">Retourner</Button>
                                         </Link>
