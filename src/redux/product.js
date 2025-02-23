@@ -10,7 +10,8 @@ export const Products = (state = {lesProduits : storeProducts},action) => {
         }
         case  REMOVE_TO_CART: 
         return {
-            
+            ...state, lesProduits : state.lesProduits.map(p => p.id === action.payload.id ? {...p, inCart:false}: true)
+
         }
         default:
             return state
