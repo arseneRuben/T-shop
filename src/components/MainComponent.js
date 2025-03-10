@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./HeaderComponent";
 import Home from "./HomeComponent";
-import {addToCart, removeToCart} from "../redux/ActionCreator";
+import {addToCart, removeToCart, addQuantity, removeQuantity} from "../redux/ActionCreator";
 import {Route, Routes, useParams} from "react-router-dom"
 import Contact from "./ContactComponent";
 import Cart from "./CartComponent";
@@ -19,7 +19,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispath => ({
     addToCart : (product) => dispath(addToCart(product)),
-    removeToCart : (id) => dispath(removeToCart(id))
+    removeToCart : (id) => dispath(removeToCart(id)),
+    addQuantity : (id) => dispath(addQuantity(id)),
+    removeQuantity : (id) => dispath(removeQuantity(id))
 });
 
 class Main extends Component {
@@ -35,10 +37,10 @@ class Main extends Component {
                 <Header/>
                
                  <Routes>
-                    <Route  path="/home/:pId" element={<ProductWithId/>}/> 
-                    <Route exact path="/home" element={<Home  products={this.props.products.lesProduits} addToCart={this.props.addToCart}/>}/> 
-                    <Route exact path="/contact" element={<Contact/>}/> 
-                    <Route  path="/cart" element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart} removeToCart={this.props.removeToCart}/>}/> 
+                    <Route       path="/home/:pId"  element={<ProductWithId/>}/> 
+                    <Route exact path="/home"       element={<Home  products={this.props.products.lesProduits} addToCart={this.props.addToCart}/>}/> 
+                    <Route exact path="/contact"    element={<Contact/>}/> 
+                    <Route       path="/cart"       element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart} removeToCart={this.props.removeToCart}  addQuantity={this.props.addQuantity} removeQuantity={this.props.removeQuantity}/>}/> 
                     
                  </Routes>
             </>

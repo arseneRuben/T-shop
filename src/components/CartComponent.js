@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Title from "./TitleComponent";
 import CartHeader from "./CartHeaderComponent";
 import CartItem from "./CartItemComponent";
@@ -15,7 +15,7 @@ function Cart(props) {
                                                 :
                                                 <>
                                                         <CartHeader/>
-                                                        {props.productsInCart.map ( p => <CartItem product={p} key={p.id}  removeToCart = {props.removeToCart}/>)}
+                                                        {props.productsInCart.map ( (p, id) => <CartItem key={id*10 } product={p}   removeToCart = {props.removeToCart} addQuantity={props.addQuantity} removeQuantity={props.removeQuantity}/>)}
                                                 </>
                                         }
                                 </div>

@@ -26,7 +26,7 @@ class BeforeHeader extends Component {
     render(){
             return (
                 <div className=" topNavBar col-12 d-none d-lg-block text-center">
-                    <p id="move"> Le meilleur site  de vente au Cameroun</p>
+                    <p id="move"> La reference  de produits et services informatiques</p>
                 </div>
             )
         }

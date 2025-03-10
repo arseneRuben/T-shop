@@ -15,7 +15,6 @@ class Header extends Component {
                                <img src="logo.png" height="40" width="200"  alt="ty-shop +237" />
                         </NavbarBrand>
                         <NavbarToggler/>
-
                         <Collapse navbar>
                             <Nav navbar id="myNavBar1" className="m-4">
                             
