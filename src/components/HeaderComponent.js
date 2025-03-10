@@ -1,19 +1,35 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse, NavItem, Button, Form, FormGroup, Input } from "reactstrap";
+import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse, NavItem, Button, Form, FormGroup, Input, Modal, ModalHeader, ModalBody, Label } from "reactstrap";
 import BeforeHeader from "./BeforeHeaderComponent";
 
 class Header extends Component {
     constructor(props){
         super(props)
-        this.state = {
-            isNavOpen : false
-        }
+
         this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+
+        this.state = {
+            isNavOpen : false,
+            isModalOpen : false
+        }
+       
     }
 
     toggleNav(){
         this.setState({isNavOpen : !this.state.isNavOpen})
+    }
+
+    toggleModal(){
+        this.setState({isModalOpen : !this.state.isModalOpen})
+    }
+
+    handleLogin(e){
+        e.preventDefault()
+        this.toggleModal()
+        alert("usernane: " + this.username.value + "\npassword: " + this.password.value + "\nremember : "+ this.remember.checked);
     }
 
     render(){
@@ -24,9 +40,7 @@ class Header extends Component {
                 <Navbar light expand="lg" id="myNavBar" className="align-items-center sticky-top ml-0 mb-nd-0 navb">
                     <div className="d-flex justify-content-between ">
                         <NavbarBrand className="mr-2">
-                            <NavLink to="/home">
                                <img src="logo.png" height="40" width="200"  alt="ty-shop +237" />
-                            </NavLink>
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}/>
                         <Collapse navbar isOpen={this.state.isNavOpen}>
@@ -55,12 +69,37 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem className="mr-2   d-none d-lg-block">
-                                    <Button outline className="btn-perso-1">Login<i className="fa-solid fa-user fa-lg"></i></Button>
+                                    <Button outline className="btn-perso-1" onClick={this.toggleModal}>Login<i className="fa-solid fa-user fa-lg"></i></Button>
                                 </NavItem>                            
                             </Nav>
                         </Collapse>
                     </div>
                 </Navbar>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalBody>
+                        <Form onSubmit={this.handleLogin}>
+                                <FormGroup>
+                                    <Label htmlFor="username">Username</Label>
+                                    <Input type="text" id="username" name="username"
+                                        innerRef={(input) => this.username = input} />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label htmlFor="password">Password</Label>
+                                    <Input type="password" id="password" name="password"
+                                        innerRef={(input) => this.password = input}  />
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Label check>
+                                        <Input type="checkbox" name="remember"
+                                        innerRef={(input) => this.remember = input}  />
+                                        Remember me
+                                    </Label>
+                                </FormGroup>
+                                <Button outline type="submit" value="submit" className="btn-perso-1">Login</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
             </>
         )
     }
