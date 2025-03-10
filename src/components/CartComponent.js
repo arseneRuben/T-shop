@@ -2,8 +2,12 @@ import React from "react";
 import Title from "./TitleComponent";
 import CartHeader from "./CartHeaderComponent";
 import CartItem from "./CartItemComponent";
+import CartTotal from "./CartTotalComponent";
+
 function Cart(props) {
         if(props.productsInCart != null){
+                var total=0;
+                props.productsInCart.forEach(p => { p.promo===0 ? total+= p.price*p.count : total+=p.count*p.price*(100-p.promo)/100  })
                 return (
                         <>
                         <Title name={"Votre"} title={"panier"}/>
@@ -20,6 +24,7 @@ function Cart(props) {
                                         }
                                 </div>
                         </div>
+                        { props.productsInCart.length === 0 ? null : <CartTotal total={total}/>}
                         </>
                 );
         } else {
