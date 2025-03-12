@@ -94,16 +94,7 @@
   }
 }
 
-/*********************** title component *********************/
-.text-title {
-  font-family: cursive;
-  letter-spacing: 0.3;
-  text-transform: uppercase;
-}
 
-.text-yellow{
-  color : #ffbb02;
-}
 
 /**************************************************Beforehead *****************************/
 .topNavBar{
@@ -203,6 +194,18 @@
   box-shadow: 1px 3px 5px 2px #656565;
 }
 
+/*************************** Small nav ***********************/
+
+/*********************** title component *********************/
+.text-title {
+  font-family: cursive;
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+}
+
+.text-yellow{
+  color : #ffbb02;
+}
 .totalRow span {
   color: #ffbb02;
 }
@@ -210,3 +213,23 @@
 .totalRow strong {
   /*color: # */
 }
+
+#navBarSmallScreen i{
+  color: #3b3a32
+}
+
+
+
+@media only screen and(min-width : 250px){
+  #navBarSmallScreen input{
+    width: 155px;
+  }
+}
+
+@media only screen and(min-width : 500px){
+  #navBarSmallScreen input{
+    width: 200px;
+  }
+}
+
+/*************************** Total Component ***********************/

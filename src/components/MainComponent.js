@@ -34,7 +34,7 @@ class Main extends Component {
         }
         return (
             <>
-                <Header/>
+                <Header  nbProduit={this.props.productsInCart.nbProduit}/>
                
                  <Routes>
                     <Route       path="/home/:pId"  element={<ProductWithId/>}/> 

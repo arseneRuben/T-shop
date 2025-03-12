@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse, NavItem, Button, Form, FormGroup, Input, Modal, ModalHeader, ModalBody, Label } from "reactstrap";
 import BeforeHeader from "./BeforeHeaderComponent";
+import NavSmallScreen from "./NavSmallScreenComponent";
+import CartSpecific from "./CartSpecificComponent";
 
 class Header extends Component {
     constructor(props){
@@ -56,7 +58,7 @@ class Header extends Component {
                                 <NavItem>
                                     <Form>
                                         <FormGroup  className="d-flex">
-                                            <Input type="text" id="searchbox"  name="searchbox"  placeholder="search..." className="mt-3"/>
+                                            <Input type="text" id="searchbox_"  name="searchbox"  placeholder="search..." className="mt-3"/>
                                             <Button  className="mt-3 "><i className="fa-solid fa-magnifying-glass fa-lg"></i></Button>
                                         </FormGroup>
                                     </Form>
@@ -65,7 +67,7 @@ class Header extends Component {
                             <Nav navbar className="myNavBar2 ml-0 ml-lg-auto align-items-lg-center">
                                 <NavItem className="mr-2   d-none d-lg-block">
                                     <NavLink to="/cart">
-                                        <Button outline className="btn-perso-1">Mon panier<i className="fa-solid fa-cart-shopping fa-lg"></i></Button>
+                                        <CartSpecific mobile={false} nbProduit={this.props.nbProduit}/>
                                     </NavLink>
                                 </NavItem>
                                 <NavItem className="mr-2   d-none d-lg-block">
@@ -75,6 +77,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
+                <NavSmallScreen toggleModal={this.toggleModal} />
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
