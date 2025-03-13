@@ -2,29 +2,44 @@ import React, { Component } from "react";
 import {  Button } from "reactstrap";
 
 export default class CartSpecific extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            visible : false,
+    
+
+    componentDidUpdate(prevProps){
+        if(this.props.nbProduit !== prevProps.nbProduit){
+            var visible=false;
+
+            if(this.props.nbProduit >= 1 )
+                
+                visible = true;
+            else
+                visible = false;
+                
+            var elements = document.getElementsByClassName("cartCount")
+            elements[0].style.display = visible ? "inline-block" : "none";
+            elements[1].style.display = visible ? "inline-block" : "none";
         }
+        
+
     }
     render(){
         if(!this.props.mobile){
             return (
                 <Button outline className="btn-perso-1">
-                    Mon panier
-                    <i className="fas fa-shopping-cart fa-lg" style={{fontSize : '25px'}}>
+                    Panier
+                    <i className="fas fa-shopping-cart fa-lg" >
                     </i>
-                      <p className="cartCount"> {this.props.nbProduit}</p>
-                     
+                    <p className="cartCount"> {this.props.nbProduit}</p>
                 </Button>
             )
         } else {
             return (
-                <>
-                <i className="fas fa-shopping-cart fa-lg" style={{fontSize : '25px'}}></i>
-                     <p className="cartCount"> {this.props.nbProduit}</p>
-                     </>
+                <>   
+                     <i className="fas fa-shopping-cart fa-lg" style={{fontSize:"25px"}}>
+                        <p className="cartCount">
+                            {this.props.nbProduit}
+                        </p>
+                    </i>
+                </>
 
             )
         }

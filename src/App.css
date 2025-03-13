@@ -210,9 +210,7 @@
   color: #ffbb02;
 }
 
-.totalRow strong {
-  /*color: # */
-}
+
 
 #navBarSmallScreen i{
   color: #3b3a32
@@ -232,4 +230,25 @@
   }
 }
 
-/*************************** Total Component ***********************/
+/*************************** Panier ***********************/
+.cartCount {
+  display: none;
+  background-color : #ffbb02;
+  font-size: 14px;
+  min-width: 22px;
+  min-height: 22px;
+  border: 2px solid #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+.myNavBar2 fas:hover {
+  color : #ffbb02 !important;
+  background-color: #3b3a32 !important;
+}
+
+

@@ -64,20 +64,20 @@ class Header extends Component {
                                     </Form>
                                 </NavItem>
                             </Nav>
-                            <Nav navbar className="myNavBar2 ml-0 ml-lg-auto align-items-lg-center">
-                                <NavItem className="mr-2   d-none d-lg-block">
+                            <Nav navbar className="myNavBar2 ml-3 mr-3  ml-lg-auto m-4 align-items-lg-center">
+                                <NavItem className="mr-2 px-3  d-inline-block  ">
                                     <NavLink to="/cart">
                                         <CartSpecific mobile={false} nbProduit={this.props.nbProduit}/>
                                     </NavLink>
                                 </NavItem>
-                                <NavItem className="mr-2   d-none d-lg-block">
+                                <NavItem className="mx-2  px-3   d-none d-lg-block">
                                     <Button outline className="btn-perso-1" onClick={this.toggleModal}>Login<i className="fa-solid fa-user fa-lg"></i></Button>
                                 </NavItem>                            
                             </Nav>
                         </Collapse>
                     </div>
                 </Navbar>
-                <NavSmallScreen toggleModal={this.toggleModal} />
+                <NavSmallScreen toggleModal={this.toggleModal} nbProduit={this.props.nbProduit} />
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>

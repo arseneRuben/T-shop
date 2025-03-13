@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Navbar,NavItem,Button,Nav,Row,Col,Form,FormGroup,Input} from 'reactstrap'
-import { NavLink } from 'react-router-dom'
 import CartSpecific from './CartSpecificComponent';
 
 
@@ -31,13 +30,10 @@ class NavSmallScreen extends Component {
                             <Nav className="myNavbar2 ml-0 ml-lg-auto flex-row align-items-center justify-content-around" navbar>
                                 
                                 <NavItem onClick = {this.props.toggleModal}>
-                                    
                                         <i className="fas fa-user fa-lg" style={{fontSize : '25px'}}></i>
-                                    
                                 </NavItem>
                                 <NavItem>
-                                        <CartSpecific mobile={true}/>
-                                   
+                                        <CartSpecific mobile={true}  nbProduit={this.props.nbProduit}/>
                                 </NavItem>
 
                             </Nav>
