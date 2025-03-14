@@ -7,12 +7,15 @@ import Contact from "./ContactComponent";
 import Cart from "./CartComponent";
 import {connect} from "react-redux"
 import ProductDetails from "./ProductDetailsComponent";
+import { storeCategory } from "../shared/data";
+import Category from "./CategoryComponent";
 
 const mapStateToProps = state => {
     return (
         {
             products : state.Products,
-            productsInCart : state.Cart
+            productsInCart : state.Cart,
+            category : state.storeCategory
         }
     )
 }
@@ -32,6 +35,15 @@ class Main extends Component {
                 <ProductDetails product={this.props.products.lesProduits.filter(p => p.id === parseInt(pId))[0]}  addToCart={this.props.addToCart}/>
             )
         }
+
+        const CategoryWithId = () => {
+            const { cId } = useParams()
+
+            return (
+                <Category products={this.props.products.lesProduits.filter(p => p.category_id === parseInt(cId))}  addToCart={this.props.addToCart} name={this.props.category.filter(c => c.id === parseInt(cId))[0].name} />
+            )
+        }
+
         return (
             <>
                 <Header  nbProduit={this.props.productsInCart.nbProduit}/>
@@ -41,7 +53,8 @@ class Main extends Component {
                     <Route exact path="/home"       element={<Home  products={this.props.products.lesProduits} addToCart={this.props.addToCart}/>}/> 
                     <Route exact path="/contact"    element={<Contact/>}/> 
                     <Route       path="/cart"       element={<Cart  productsInCart={this.props.productsInCart.lesProduitsInCart} removeToCart={this.props.removeToCart}  addQuantity={this.props.addQuantity} removeQuantity={this.props.removeQuantity}/>}/> 
-                    
+                    <Route       path="/category/:cId"  element={<CategoryWithId/>}/> 
+
                  </Routes>
             </>
            

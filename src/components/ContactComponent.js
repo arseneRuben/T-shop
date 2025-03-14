@@ -65,9 +65,6 @@ export default class Contact extends Component {
         
         return error;
     }
-
-
-
     handleBlur = (field)=> (e) =>{
         this.setState(
                 {
@@ -102,10 +99,7 @@ export default class Contact extends Component {
         alert(this.state.firstname)
     }
 
-
-
   render() {
-
     const errors = this.validate(this.state.firstname,this.state.lastname,this.state.email,this.state.object,this.state.telnum,this.state.message);
     return (
       <div className='container'> 
