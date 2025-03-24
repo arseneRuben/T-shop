@@ -7,13 +7,10 @@ export default class CartSpecific extends Component {
     componentDidUpdate(prevProps){
         if(this.props.nbProduit !== prevProps.nbProduit){
             var visible=false;
-
             if(this.props.nbProduit >= 1 )
-                
                 visible = true;
             else
                 visible = false;
-                
             var elements = document.getElementsByClassName("cartCount")
             elements[0].style.display = visible ? "inline-block" : "none";
             elements[1].style.display = visible ? "inline-block" : "none";

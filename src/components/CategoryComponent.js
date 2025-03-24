@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col, FormFeedback } from 'reactstrap'
+import React from 'react';
 import Title from './TitleComponent';
 import ProductList from './ProductListComponent';
 

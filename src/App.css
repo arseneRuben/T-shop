@@ -252,3 +252,100 @@
 }
 
 
+/************* search component ****************/
+.searchContainer {
+  min-height: 500px !important;
+}
+
+/**********  footer ***************/
+footer {
+  background-color: #282828;
+  margin-top: 20px;
+
+}
+
+.footer-copyright {
+  color: white;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.footer-copyright a{
+  text-decoration: none;
+  color: wheat !important;
+
+}
+
+.list-link li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffbb02;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px ;
+}
+
+
+.list-link  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.list-link li i{
+  color: white !important ;
+}
+
+#social-fb:hover {
+  color : #3b5998 !important;
+}
+#social-tw:hover {
+  color : #4099ff !important;
+}
+#social-gp:hover {
+  color : #d34836 !important;
+}
+#social-em:hover {
+  color : #fa3c3c !important
+  ;
+}
+
+.social {
+  transition: all ease-in-out 0.5s;
+}
+
+.social :hover {
+ transform: scale(1.3);
+}
+
+/**************** Go to Top Btn *****************/
+
+.goToTopBtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffbb02;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  text-align: center;
+  bottom: 40px;
+  right: 50px;
+  padding: 8px;
+}
+
+.goToTopBtn i {
+  color: white !important;
+  transition: all .3s;
+}
+.goToTopBtn:hover i{
+  color: #3b3a32 !important;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}

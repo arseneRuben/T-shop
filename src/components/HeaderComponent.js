@@ -1,9 +1,20 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import { Navbar, Nav, NavbarToggler, NavbarBrand, Collapse, NavItem, Button, Form, FormGroup, Input, Modal, ModalHeader, ModalBody, Label } from "reactstrap";
 import BeforeHeader from "./BeforeHeaderComponent";
 import NavSmallScreen from "./NavSmallScreenComponent";
 import CartSpecific from "./CartSpecificComponent";
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+
+
+const SearchBtn = () => {
+    const navigate = useNavigate();
+    return (
+        <button className="mt-3 btn btn-default" type="submit" onClick={() => navigate('/home/search')}>
+            <i className="fa-solid fa-magnifying-glass fa-lg"></i>
+        </button>
+    );
+};
 
 class Header extends Component {
     constructor(props){
@@ -12,12 +23,19 @@ class Header extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
             isNavOpen : false,
-            isModalOpen : false
+            isModalOpen : false,
+            search : ''
         }
        
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.search(this.state.search);
     }
 
     toggleNav(){
@@ -56,10 +74,14 @@ class Header extends Component {
 
                             <Nav navbar className="myNavBar3 d-none d-lg-block">
                                 <NavItem>
-                                    <Form>
+                                    <Form  onSubmit={this.handleSubmit}>
                                         <FormGroup  className="d-flex">
-                                            <Input type="text" id="searchbox_"  name="searchbox"  placeholder="search..." className="mt-3"/>
-                                            <Button  className="mt-3 "><i className="fa-solid fa-magnifying-glass fa-lg"></i></Button>
+                                            <Input type="text" id="searchbox_"
+                                              name="searchbox"  placeholder="search..." 
+                                              value = {this.state.search}
+                                              onChange={(e)=> this.setState({search : e.target.value})}
+                                              className="mt-3"/>
+                                              <SearchBtn />
                                         </FormGroup>
                                     </Form>
                                 </NavItem>
